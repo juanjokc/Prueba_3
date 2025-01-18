@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='formatos.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Ejercicio 2</h1>
+        <form method="post" class="mt-4">
+            <div class="mb-3">
+                <label for="nombre1" class="form-label">Nombre 1:</label>
+                <input type="text" id="nombre1" name="nombre1" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="nombre2" class="form-label">Nombre 2:</label>
+                <input type="text" id="nombre2" name="nombre2" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="nombre3" class="form-label">Nombre 3:</label>
+                <input type="text" id="nombre3" name="nombre3" class="form-control" required>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="boton_Menu">Enviar</button>
+            </div>
+        </form>
+
+        {% if nombre_largo is not none %}
+        <div class="mt-4 text-center">
+            <p><strong>Nombre más largo:</strong> {{ nombre_largo }}</p>
+            <p><strong>Longitud:</strong> {{ longitud }} caracteres</p>
+        </div>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="/" class="boton_Menu">Volver</a>
+        </div>
+    </div>
+</body>
+
+</html>
